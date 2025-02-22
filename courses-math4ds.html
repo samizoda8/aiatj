@@ -1,0 +1,906 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Math for Data Science - Академияи AI</title>
+    <meta name="description" content="Асосҳои математика барои таҳлили додаҳо ва моделсозии AI дар Душанбе. Омӯзиши эҳтимолият, алгебра ва ҳисоб.">
+    <meta name="keywords" content="математика, Data Science, эҳтимолият, моделсозӣ, Душанбе, zypl.ai">
+    <meta property="og:title" content="Математика барои Data Science - Омӯзиши курс дар Душанбе">
+    <meta property="og:description" content="Курс дар Душанбе барои шахсоне, ки мехоҳанд математикаи AI ва Data Science-ро омӯзанд.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon-skillgro.css">
+    <link rel="stylesheet" href="assets/css/flaticon-skillgro-new.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/default-icons.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/plyr.css">
+    <link rel="stylesheet" href="assets/css/spacing.css">
+    <link rel="stylesheet" href="assets/css/tg-cursor.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!--Preloader-end -->
+    
+        <!-- Scroll-top -->
+        <button class="scroll__top scroll-to-target" data-target="html">
+            <i class="tg-flaticon-arrowhead-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+    
+        <!-- header-area -->
+        <header>
+            <div class="tg-header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="tg-header__top-info list-wrap">
+                                <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span><small>кӯчаи Ш. Шотемур 21, ш. Душанбе</small></span></li>
+                                <li><img src="assets/img/icons/envelope.svg" alt="Icon"> <a href="mailto:ai.academy@zypl.ai"><small>ai.academy@zypl.ai</small></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="tg-header__top-right">
+                                <div class="tg-header__phone">
+                                    <img src="assets/img/icons/phone.svg" alt="Icon"><small>Тамос бо мо:</small><a href="tel:992995550032"><small>+992 99 555 00 32</small></a>
+                                </div>
+                                <ul class="tg-header__top-social list-wrap">
+                                    <li><small>Мо дар шабакаҳои иҷтимоӣ:</small></li>
+                                    <li><a href="https://www.instagram.com/aiacademy.tj"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61571167420750"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/aiacademytj/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://t.me/aiacademytj"><i class="fab fa-telegram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                async function updateLocationInfo() {
+                    try {
+                        let response = await fetch('https://ipapi.co/json/');
+                        let data = await response.json();
+                        let city = data.city; // Определяем город пользователя
+                
+                        let addressElement = document.querySelector(".tg-header__top-info li span small");
+                        let phoneElement = document.querySelector(".tg-header__phone a small");
+                        let phoneLink = document.querySelector(".tg-header__phone a");
+                
+                        if (city === "Khujand") {
+                            addressElement.textContent = "кӯчаи Тироз 1А, ш. Хуҷанд";
+                            phoneElement.textContent = "+992 92 848 90 10";
+                            phoneLink.href = "tel:992928489010";
+                        } else {
+                            addressElement.textContent = "кӯчаи Ш. Шотемур 21, ш. Душанбе";
+                            phoneElement.textContent = "+992 99 555 00 32";
+                            phoneLink.href = "tel:992995550032";
+                        }
+                    } catch (error) {
+                        console.error("Хатогии муайян кардани маҳал:", error);
+                    }
+                }
+                
+                updateLocationInfo();
+                </script>
+                
+            <div id="header-fixed-height"></div>
+            <div id="sticky-header" class="tg-header__area tg-header__style-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tgmenu__wrap">
+                                <nav class="tgmenu__nav">
+                                    <div class="logo">
+                                        <a href="index.html"><img src="assets/img/logo/logo.png" width="120" alt="Logo"></a>
+                                    </div>
+                                    <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                                        <ul class="navigation">
+                                            <li class="menu-item"><a href="index.html">Асосӣ</a>
+                                            </li>
+                                            
+                                            <li class="menu-item-has-children"><a href="courses.html">Курсҳо</a>
+                                                <ul class="sub-menu mega-menu">
+                                                    <li>
+                                                        <ul class="list-wrap mega-sub-menu">
+                                                            <li>
+                                                                <a href="#" style="text-transform: none;"><b>Курсҳои Асосӣ</b></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dataanalyst.html"><small>Data Analyst</small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dsjunior.html"><small>Data Scientist Junior</small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dsadvanced.html"><small>Data Scientist Advanced</small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-mlops.html"><small>MLOps</small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dataanalyst02.html" style="text-transform: none;"><small>Data Analyst <b>дар ш. Хуҷанд</b></small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dsjunior02.html" style="text-transform: none;"><small>Data Scientist Junior <b>дар ш. Хуҷанд</b></small></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <ul class="list-wrap mega-sub-menu">
+                                                            <li>
+                                                                <a href="#" style="text-transform: none;"><b>Курсҳои корпоративӣ</b></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-dabasics.html"><small>Data Analytics Basics</small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-daadvanced.html"><small>Data Analytics Advanced</small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-gptpe.html"><small>GPT Prompt Engineer</small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        
+                                                    </li>
+                                                    <li style="border-left: 1px solid #D6D6D6;">
+                                                        <ul class="list-wrap mega-sub-menu">
+                                                            <li>
+                                                                <a href="#" style="text-transform: none;"><b>Курсҳои иловагӣ</b></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-basiccourse.html"><small>Basic Course</small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-aipm.html"><small>AI Product Manager</small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                            <li class="active">
+                                                                <a href="#"><small>Math for DS</small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-basiccourse02.html" style="text-transform: none;"><small>Basic Course <b>дар ш. Хуҷанд</b></small></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="courses-math4ds02.html" style="text-transform: none;"><small>Math for DS <b>дар ш. Хуҷанд</b></small><span class="tg-badge">Нав</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>                                                    
+                                                </ul>
+                                                
+                                            </li>
+                                            <li class="menu-item"><a style="text-transform: none;" href="about.html">Дар бораи Академия</a>
+                                            </li>
+                                            <!--<li class="menu-item"><a href="index.html#bootcamp">AI Bootcamp</a>
+                                        </li>-->
+                                            <li class="menu-item"><a href="index.html#schedule">Ҷадвал</a>
+                                            </li>
+                                            <li class="menu-item"><a href="index.html#testimonials">Баррасиҳо</a>
+                                            </li>
+                                            <li class="menu-item"><a href="blog.html">Хабарҳо</a>
+                                            </li>
+    
+                                            
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="tgmenu__action tgmenu__action-three">
+                                        <ul class="list-wrap">
+                                            <li class="header-search">
+                                                <a href="javascript:void(0)" class="search-open-btn">
+                                                    <i class="flaticon-search"></i>
+                                                </a>
+                                            </li>
+                                            <li class="mini-cart-icon">
+                                                <a href="#" class="cart-count">
+                                                    <img src="assets/img/icons/russia.png" width="90%" class="injectable" alt="img">
+                                                </a>
+                                            </li>
+                                            <li class="header-btn">
+                                                <a style="text-transform: none;" href="https://taplink.cc/aic.tj" class="btn arrow-btn">Дархостгузорӣ <img src="assets/img/icons/right_arrow.svg" alt="img" class="injectable"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
+                                </nav>
+                            </div>
+                            <!-- Mobile Menu  -->
+                            <div class="tgmobile__menu">
+                                <nav class="tgmobile__menu-box">
+                                    <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
+                                    <div class="nav-logo">
+                                        <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                    </div>
+                                    <div class="tgmobile__search">
+                                        <form action="#">
+                                            <input type="text" placeholder="Ищите здесь...">
+                                            <button><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="tgmobile__menu-outer">
+                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                    </div>
+                                    <div class="social-links">
+                                        <ul class="list-wrap">
+                                                <li><a href="https://www.instagram.com/aiacademy.tj"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61571167420750"><i class="fab fa-facebook-f"></i></a></li>
+                                    <!--<li><a href="https://www.youtube.com/@zypl_ai"><i class="fab fa-youtube"></i></a></li>-->
+                                    <li><a href="https://www.linkedin.com/company/aiacademytj/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://t.me/aiacademytj"><i class="fab fa-telegram"></i></a></li>
+
+    
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="tgmobile__menu-backdrop"></div>
+                            <!-- End Mobile Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <!-- header-search -->
+            <div class="search__popup">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="search__wrapper">
+                                <div class="search__close">
+                                    <button type="button" class="search-close-btn">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="search__form">
+                                    <form action="#">
+                                        <div class="search__input">
+                                            <input class="search-input-field" type="text" placeholder="Дархости худро дар ин ҷо ворид кунед...">
+                                            <span class="search-focus-border"></span>
+                                            <button>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-popup-overlay"></div>
+            <!-- header-search-end -->
+    
+        </header>
+        <!-- header-area-end -->
+
+    <!-- main-area -->
+    <main class="main-area fix">
+
+        <!-- breadcrumb-area -->
+        <div class="breadcrumb__area breadcrumb__bg breadcrumb__bg-two" data-background="assets/img/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb__content">
+                            <nav class="breadcrumb">
+                                <span property="itemListElement" typeof="ListItem">
+                                    <a href="index.html">Асосӣ</a>
+                                </span>
+                                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                                <span property="itemListElement" typeof="ListItem">
+                                    <a href="courses.html">Курсҳо</a>
+                                </span>
+                                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                                <span property="itemListElement" typeof="ListItem">Math for Data Science</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape-wrap">
+                <img src="assets/img/others/breadcrumb_shape01.svg" alt="img" class="alltuchtopdown">
+                <img src="assets/img/others/breadcrumb_shape02.svg" alt="img" data-aos="fade-right" data-aos-delay="300">
+                <img src="assets/img/others/breadcrumb_shape03.svg" alt="img" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/img/others/breadcrumb_shape04.svg" alt="img" data-aos="fade-down-left" data-aos-delay="400">
+                <img src="assets/img/others/breadcrumb_shape05.svg" alt="img" data-aos="fade-left" data-aos-delay="400">
+            </div>
+        </div>
+        <!-- breadcrumb-area-end -->
+
+       <!-- courses-details-area -->
+       <section class="courses__details-area section-py-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-8">
+                    <div class="courses__details-thumb">
+                        <img src="assets/img/courses/coursesBigThumb/math4ds.png" alt="img">
+                    </div>
+                    <div class="courses__details-content">
+
+                        <h2 class="title">Math for Data Science</h2>
+<!--                            <div class="courses__details-meta">
+                            <ul class="list-wrap">
+                                <li class="author-two">
+                                    <img src="assets/img/courses/course_author001.png" alt="img">
+                                    
+                                    <a href="about.html">Академияи AI</a>
+                                </li>
+                                <li class="date"><i class="flaticon-calendar"></i>05.05.2025</li>
+                            </ul>
+                        </div>-->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Шарҳи курс</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Нақшаи таълимӣ</button>
+                            </li>
+                            <!--<li class="nav-item" role="presentation">
+                                <button class="nav-link" id="instructors-tab" data-bs-toggle="tab" data-bs-target="#instructors-tab-pane" type="button" role="tab" aria-controls="instructors-tab-pane" aria-selected="false">Инструкторы</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-tab-pane" type="button" role="tab" aria-controls="reviews-tab-pane" aria-selected="false">Отзывы</button>
+                            </li>-->
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                                <div class="courses__overview-wrap">
+                                    <h3 class="title">Тавсифи курс</h3>
+                                    <p style="text-align: justify;">Ин курс оид ба асосҳои математикии Data Science барои онҳое пешбинӣ шудааст, ки мехоҳанд принсипҳои математикиро, ки дар асоси алгоритмҳо ва моделҳои Data Science истифода мешаванд, амиқтар дарк кунанд.
+
+                                        Дар тӯли 2 моҳ, шумо соҳаҳои муҳими алгебраи хаттӣ, омор ва эҳтимолият-ро меомӯзед, ки ҷузъи ҷудонашавандаи кор бо додаҳо ва омӯзиши мошинӣ мебошанд.
+                                        
+                                        Курс ба шумо кӯмак мекунад, ки тафаккури математикӣ рушд диҳед ва ин донишҳоро барои ҳалли масъалаҳои воқеӣ дар Data Science татбиқ намоед.</p>
+                                    <h3 class="title">Чӣ чизро дар ин курс меомӯзед?</h3>
+                                    <p>Дар ин курс шумо консепсияҳои асосии математикаро, ки барои кор бо додаҳо заруранд, аз худ мекунед.
+
+                                        Шумо алгебраи хаттиро меомӯзед, ки ба шумо кӯмак мекунад усулҳои кор бо матритсаҳо ва векторҳоро дарк кунед.
+                                        
+                                        Шумо омор ва эҳтимолиятро меомӯзед, ки асоси сохтани моделҳо ва пешгӯиҳо мебошанд.
+                                        
+                                        Ин донишҳои математикӣ ба шумо кӯмак мекунанд, ки фаҳмед алгоритмҳои омӯзиши мошинӣ чӣ тавр кор мекунанд ва чӣ тавр онҳоро барои таҳлили додаҳо татбиқ кардан мумкин аст.</p>
+                                    <p>Илова бар ин, курс дорои бисёр мисолҳои амалӣ мебошад, ки ба шумо имкон медиҳад дарҳол донишҳои гирифтаатонро дар амал татбиқ кунед.
+
+                                        Шумо меомӯзед, ки чӣ тавр додаҳоро таҳлил кунед, моделҳо созед ва хулоса бароред, бо истифода аз методҳои математикӣ.</p>
+                                    <h3 class="title">Чаро ин курс муфид аст:</h3>
+                                    <ul class="about__info-list list-wrap">
+                                        <li class="about__info-list-item">
+                                            <i class="flaticon-angle-right"></i>
+                                            <p class="content">Фаҳмиши амиқи консепсияҳои мураккаб – шумо усулҳои асосии математикаро, ки дар Data Science истифода мешаванд, меомӯзед ва татбиқ мекунед.</p>
+                                        </li>
+                                        <li class="about__info-list-item">
+                                            <i class="flaticon-angle-right"></i>
+                                            <p class="content">Равиши амалӣ – татбиқи назария ба масъалаҳои воқеӣ барои таҳкими дониш ва омодагӣ ба кор дар Data Science.</p>
+                                        </li>
+                                        <li class="about__info-list-item">
+                                            <i class="flaticon-angle-right"></i>
+                                            <p class="content">Рушди тафаккури математикӣ – кӯмак мекунад, ки барои дарки алгоритмҳо ва моделҳои мураккаб асос гузоред.</p>
+                                        </li>
+                                    </ul>
+                                    <p class="last-info">Дар охири курс шумо
+                                        Ба таври амиқ математикаро, ки барои Data Science зарур аст, меомӯзед.
+                                        
+                                        Алгоритмҳо ва моделҳои омӯзиши мошиниро фаҳмида, онҳоро барои ҳалли масъалаҳои воқеӣ истифода мебаред.
+                                        
+                                        Методҳои математикӣ-ро самаранок барои таҳлил ва пешгӯии додаҳо истифода мекунед.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="courses__curriculum-wrap">
+                                    <h3 class="title">Нақшаи таълимии курс</h3>
+                                    <p>Ин курс шуморо бо асосҳои муҳими математикӣ барои Data Science шинос мекунад. Дар тӯли 2 моҳ, шумо алгебраи хаттӣ, омор ва эҳтимолиятро, ки барои кор бо додаҳо ва омӯзиши мошинӣ заруранд, аз худ мекунед. Курс назария ва амалияро муттаҳид намуда, ба шумо кӯмак мекунад, ки тафаккури математикӣ рушд диҳед ва донишҳои гирифтаатонро барои таҳлили додаҳо ва сохтани моделҳо татбиқ намоед.</p>
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Функсияҳои элементарӣ ва таърифҳои асосӣ
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul class="list-wrap">
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Логарифмҳо, миқёси логарифмӣ.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Истифодаи логарифмҳо дар таҳлили додаҳо (масалан, дар шкалаҳои ченак).</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Ҳосилаҳо дар ҳаёти воқеӣ ва истифодаи онҳо дар ML.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Муқаддима ба алгебраи хаттӣ
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul class="list-wrap">
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Мафҳумҳои асосӣ: векторҳо, самт, дарозӣ.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Тасвиркунии векторҳо.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Нормҳо ва хосиятҳои матритсаҳо
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul class="list-wrap">
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Истифодаи нормҳо дар таҳлили додаҳо.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="course-item">
+                                                            <a href="#" class="course-item-link">
+                                                                <span class="item-name">Метрикаҳои сифатӣ дар асоси нормҳо.</span>
+                                                                <div class="course-item-meta">
+                                                                    <span class="item-meta course-item-status">
+                                                                        <img src="assets/img/icons/lock.svg" alt="icon">
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFive">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    Лоиҳаи ниҳоӣ
+                                                </button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--<div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel" aria-labelledby="instructors-tab" tabindex="0">
+                                <div class="courses__instructors-wrap">
+                                    <div class="courses__instructors-thumb">
+                                        <img src="assets/img/courses/course_instructors.png" alt="img">
+                                    </div>
+                                    <div class="courses__instructors-content">
+                                        <h2 class="title">Маълум нест</h2>
+                                        <span class="designation">Инструктор курса</span>
+                                        
+                                        <div class="instructor__social">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--<div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+                                <div class="courses__rating-wrap">
+                                    <h2 class="title">Reviews</h2>
+                                    <div class="course-rate">
+                                        <div class="course-rate__summary">
+                                            <div class="course-rate__summary-value">4.8</div>
+                                            <div class="course-rate__summary-stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="course-rate__summary-text">
+                                                12 Ratings
+                                            </div>
+                                        </div>
+                                        <div class="course-rate__details">
+                                            <div class="course-rate__details-row">
+                                                <div class="course-rate__details-row-star">
+                                                    5
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div class="course-rate__details-row-value">
+                                                    <div class="rating-gray"></div>
+                                                    <div class="rating" style="width:80%;" title="80%"></div>
+                                                    <span class="rating-count">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="course-rate__details-row">
+                                                <div class="course-rate__details-row-star">
+                                                    4
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div class="course-rate__details-row-value">
+                                                    <div class="rating-gray"></div>
+                                                    <div class="rating" style="width:50%;" title="50%"></div>
+                                                    <span class="rating-count">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="course-rate__details-row">
+                                                <div class="course-rate__details-row-star">
+                                                    3
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div class="course-rate__details-row-value">
+                                                    <div class="rating-gray"></div>
+                                                    <div class="rating" style="width:0%;" title="0%"></div>
+                                                    <span class="rating-count">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="course-rate__details-row">
+                                                <div class="course-rate__details-row-star">
+                                                    2
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div class="course-rate__details-row-value">
+                                                    <div class="rating-gray"></div>
+                                                    <div class="rating" style="width:0%;" title="0%"></div>
+                                                    <span class="rating-count">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="course-rate__details-row">
+                                                <div class="course-rate__details-row-star">
+                                                    1
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div class="course-rate__details-row-value">
+                                                    <div class="rating-gray"></div>
+                                                    <div class="rating" style="width:0%;" title="0%"></div>
+                                                    <span class="rating-count">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="course-review-head">
+                                        <div class="review-author-thumb">
+                                            <img src="assets/img/courses/review-author.png" alt="img">
+                                        </div>
+                                        <div class="review-author-content">
+                                            <div class="author-name">
+                                                <h5 class="name">Jura Hujaor <span>2 Days ago</span></h5>
+                                                <div class="author-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <h4 class="title">The best LMS Design System</h4>
+                                            <p>Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper bibendum nisi porta, malesuada risus nonerviverra dolor. Vestibulum ante ipsum primis in faucibus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                    <div class="courses__details-sidebar">
+                        <div class="courses__details-video">
+                            <a href="courses-dsjunior.html"><img src="assets/img/courses/coursesSmallThumb/dsjunior.png" alt="img"></a>
+                        </div>
+                        <div class="courses__cost-wrap">
+                            <span>Нарх барои як моҳ:</span>
+            <h2 class="title">500 сомонӣ</h2>
+        </div>
+        <div class="courses__information-wrap">
+            <h5 class="title">Курс иборат аст аз:</h5>
+            <ul class="list-wrap">
+                <li>
+                    <img src="assets/img/icons/i0.svg" alt="img" class="icon-adaptive injectable">
+                    Сатҳ
+                    <span>Миёна</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i1.svg" alt="img" class="icon-adaptive injectable">
+                    Давомнокӣ
+                    <span>2 моҳ</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i2.svg" alt="img" class="icon-adaptive injectable">
+                    Дарсҳо
+                    <span>16</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i3.svg" alt="img" class="icon-adaptive injectable">
+                    Оғози таҳсил
+                    <span>(null)</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i4.svg" alt="img" class="icon-adaptive injectable">
+                    Вақти дарсҳо
+                    <span><small>18:00/20:00</small></span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i5.svg" alt="img" class="icon-adaptive injectable">
+                    Формати таҳсил
+                    <span>офлайн</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i6.svg" alt="img" class="icon-adaptive injectable">
+                    Синну сол
+                    <span>16+</span>
+                </li>
+                <li>
+                    <img src="assets/img/icons/i7.svg" alt="img" class="icon-adaptive injectable">
+                    Шаҳодатнома
+                    <span>Бале</span>
+                </li>
+            </ul>
+<style>.icon-adaptive {
+width: auto; /* Позволяет сохранять пропорции */
+height: 1.3em; /* Размер зависит от шрифта */
+max-width: 100%; /* Не выходит за границы */
+}
+
+@media (max-width: 768px) {
+.icon-adaptive {
+    height: 1.1em; /* Уменьшаем иконку на мобильных */
+}
+}
+
+@media (max-width: 480px) {
+.icon-adaptive {
+    height: 0.9em; /* Еще меньше для телефонов */
+}
+}
+</style>  
+                        </div>
+                       
+                        <div class="courses__details-social">
+                            <h5 class="title">Мубодилаи курс:</h5>
+                            <ul class="list-wrap">
+                                <li><a href="#" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" onclick="shareOnLinkedIn()"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" onclick="shareOnTelegram()"><i class="fab fa-telegram"></i></a></li>
+                                <li><a href="#" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" onclick="copyLink()"><i class="fas fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                        <script>
+                            // Получаем текущий URL и заголовок страницы
+const currentUrl = encodeURIComponent(window.location.href);
+const pageTitle = encodeURIComponent(document.title);
+
+// Поделиться в Facebook
+function shareOnFacebook() {
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`, '_blank');
+}
+
+// Поделиться в LinkedIn
+function shareOnLinkedIn() {
+window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${pageTitle}`, '_blank');
+}
+
+// Поделиться в Telegram
+function shareOnTelegram() {
+window.open(`https://t.me/share/url?url=${currentUrl}&text=${pageTitle}`, '_blank');
+}
+
+// Поделиться в Instagram (напрямую нельзя, поэтому даем ссылку на профиль)
+function shareOnInstagram() {
+alert("Instagram не поддерживает прямое шаринг-ссылок. Вы можете добавить ссылку в свой профиль.");
+window.open("https://www.instagram.com/", '_blank');
+}
+
+// Копирование ссылки в буфер обмена
+function copyLink() {
+navigator.clipboard.writeText(window.location.href).then(() => {
+    alert("Ссылка скопирована!");
+}).catch(err => {
+    console.error('Ошибка при копировании: ', err);
+});
+}
+
+                        </script>
+                        <div class="courses__details-enroll">
+                            <div class="tg-button-wrap">
+                                <a href="#" class="btn btn-two arrow-btn">
+                                    Бақайдгирӣ
+                                        <img src="assets/img/icons/right_arrow.svg" alt="img" class="injectable">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- courses-details-area-end -->
+
+    </main>
+    <!-- main-area-end -->
+
+
+
+   <!-- footer-area -->
+   <footer class="footer__area">
+    <div class="footer__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <div class="logo mb-35">
+                            <a href="index.html"><img src="assets/img/logo/secondary_logo.png" width="50%" alt="img"></a>
+                        </div>
+                        <div class="footer__content">
+                            <p>Академияи AI кӯшиш мекунад, ки маркази пешбари таҳсил ва таҳқиқот оид ба зеҳни сунъӣ дар Тоҷикистон гардад.</p>
+                            <ul class="list-wrap">
+                                <li>кӯчаи Ш. Шотемур 21, <b>ш. Душанбе</b></li>
+                                <li>+992 99 555 00 32</li>
+                                <li>кӯчаи Тироз 1А, <b>ш. Хуҷанд</b></li>
+                                <li>+992 92 848 90 10</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Истинодҳои муфид</h4>
+                        <div class="footer__link">
+                            <ul class="list-wrap">
+                                <li><a href="index.html">Асосӣ</a></li>
+                                <li><a href="courses.html">Курсҳо</a></li>
+                                <li><a href="blog.html">Хабарҳо</a></li>
+                                <li><a href="about.html">Дар бораи Академия</a></li>
+                                <li><a href="contact.html">Тамос бо мо</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Академияи мо</h4>
+                        <div class="footer__link">
+                            <ul class="list-wrap">
+                                <li><a href="index.html#faq">FAQ</a></li>
+                                <li><a href="schedule.html">Курсҳои дарпешистода</a></li>
+                                <li><a href="index.html#testimonials">Баррасиҳо</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Бо мо бошед</h4>
+                        <div class="footer__contact-content">
+                            <p>Агар ба шумо кӯмак лозим бошад, метавонед дар бораи мо дар шабакаҳои иҷтимоӣ маълумот гиред ё ба мо почта нависед.</p>
+                            <ul class="list-wrap footer__social">
+                                    <li><a href="https://www.instagram.com/aiacademy.tj"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61571167420750"><i class="fab fa-facebook-f"></i></a></li>
+                                    <!--<li><a href="https://www.youtube.com/@zypl_ai"><i class="fab fa-youtube"></i></a></li>-->
+                                    <li><a href="https://www.linkedin.com/company/aiacademytj/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://t.me/aiacademytj"><i class="fab fa-telegram"></i></a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="copy-right-text">
+                        <p>© Академияи AI - 2025. Ҳамаи ҳуқуқҳо ҳифз шудаанд!</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="footer__bottom-menu">
+                        <ul class="list-wrap">
+                            <li>Developed by<a href="#"> samizoda' Incorporated</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer-area-end -->
+
+
+<!-- JS here -->
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/tween-max.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery.marquee.min.js"></script>
+<script src="assets/js/tg-cursor.min.js"></script>
+<script src="assets/js/vivus.min.js"></script>
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/svg-inject.min.js"></script>
+<script src="assets/js/jquery.circleType.js"></script>
+<script src="assets/js/jquery.lettering.min.js"></script>
+<script src="assets/js/plyr.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    SVGInject(document.querySelectorAll("img.injectable"));
+</script>
+</body>
+
+</html>

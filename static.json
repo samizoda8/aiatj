@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "type": 301 },
+    { "source": "/about.html", "destination": "/about", "type": 301 },
+    { "source": "/bc-1cohort.html", "destination": "/bc-first-cohort", "type": 301 }
+  ],
+  "routes": {
+    "/**": "404.html"
+  }
+}
